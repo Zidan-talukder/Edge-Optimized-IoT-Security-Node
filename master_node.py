@@ -1,14 +1,19 @@
 """
-Edge-Optimized Multi-Modal Security Node (IoT Vision)
-Architecture: Hybrid Edge-to-Cloud Distributed Inferencing
+Edge-Deployed Smart Surveillance & Emotion Tracking System with Cloud-API Fallback
 Author: MD. Zidan Talukder
 
 Description: 
-A resource-optimized computer vision daemon for constrained edge devices.
-Maintains a low-power idle state using structural background subtraction. 
-Upon motion detection, the system triggers localized biometrics (LBPH) and 
-behavioral analysis, offloading heavy semantic tagging to a Cloud REST API 
-only when anomalous entities are detected.
+This project is an intelligent security system designed to run on resource-constrained 
+edge devices like a Raspberry Pi or Jetson Nano. To keep the system running efficiently 
+without overheating, it operates in a low-power "idle" mode, using basic motion detection 
+to watch over the area.
+
+When movement is detected, the system wakes up to perform more intensive tasks locally, 
+including face recognition, emotion tracking, and object tracking. I've integrated 
+support for the Intel Neural Compute Stick 2 to handle these heavy calculations, 
+ensuring real-time performance without putting too much strain on the main CPU. 
+If the system identifies an unknown person or a potential security concern, it 
+automatically sends a snapshot to a Cloud API for deeper analysis.
 """
 
 import cv2
