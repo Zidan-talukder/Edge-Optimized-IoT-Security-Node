@@ -25,6 +25,11 @@ The pipeline operates in three distinct computational states:
    * Captures the frame, encodes the payload, and transmits it via HTTP Requests to the Imagga Cloud API.
    * Parses the returning JSON to log high-level object tags.
 
+### Hardware Acceleration (Intel Movidius NCS2)
+A raw Raspberry Pi CPU bottlenecks severely when attempting concurrent Computer Vision and Deep Learning tasks, dropping frame rates to unviable levels (<5 FPS). 
+
+To achieve real-time latency, this system architecture integrates the **Intel Movidius Neural Compute Stick 2 (NCS2)**. By utilizing the OpenVINO toolkit and configuring OpenCV's DNN module (`cv2.dnn.DNN_TARGET_MYRIAD`), the heavy facial and emotional inference matrices are offloaded entirely to the VPU. This frees up the local CPU to seamlessly handle the I/O operations, motion triggering, and wireless Cloud API payloads without thermal throttling.
+
 ## Technology Stack
 * **Core Language:** Python 3.x
 * **Computer Vision:** OpenCV (Haar Cascades, LBPH, Background Subtraction, Contour Tracking)
