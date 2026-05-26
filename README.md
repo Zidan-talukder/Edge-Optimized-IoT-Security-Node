@@ -1,4 +1,4 @@
-# Edge-Optimized Multi-Modal Security Node (IoT Vision)
+# Edge-Deployed Smart Surveillance & Emotion Tracking System with Cloud-API Fallback
 
 ## Executive Summary
 This project demonstrates a resource-optimized, multi-modal computer vision pipeline designed for deployment on edge devices (Raspberry Pi / Nvidia Jetson Nano). To overcome the thermal and computational limits of continuous edge inferencing, the system employs a multi-state architecture. 
